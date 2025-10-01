@@ -30,10 +30,10 @@ Tema Yang diangkat
 
 👥 Tim Pengembang
 
-- [Raffi] – Team Leader & BackEnd Dev.
-- [Hafiz] – UI/UX Designer & Proposal.
-- [Aza] – FrontEnd.
-- [Unggul] – BackEnd Dev.
+- [M Raffi Z] – Team Leader & BackEnd Dev.
+- [Hafiz R R] – UI/UX Designer & Proposal.
+- [Syeril Azalea R] – FrontEnd.
+- [Unggul A] – BackEnd Dev.
 
 
 🏆 Tujuan
