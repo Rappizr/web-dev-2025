@@ -90,7 +90,7 @@ export default function BlogPage() {
 
       <main className="flex-1 container mx-auto px-6 lg:px-10 xl:px-12 py-8">
         {/* Cover image */}
-        <div className="mt-6 overflow-hidden rounded-xl border bg-card">
+  <div className="overflow-hidden rounded-xl border bg-card">
           <Image
             src="/images/blog-hero.jpg"
             alt="Modern UI navigation interface showing menu structures and user flow"
@@ -104,14 +104,14 @@ export default function BlogPage() {
         {/* Layout: Artikel + Sidebar */}
         <div className="mt-8 ">
           {/* Artikel */}
-          <article className="lg:col-span-8">
+          <article className="lg:col-span-8 text-center">
             <header className="mb-8">
               <h1 className="text-center text-pretty text-3xl font-semibold leading-tight sm:text-4xl">
                 Antique Batik by Febby
               </h1>
             </header>
 
-            <div className="prose prose-lg max-w-none dark:prose-invert prose-headings:font-semibold">
+            <div className="prose prose-lg max-w-none dark:prose-invert prose-headings:font-semibold text-justify">
               <p className="mb-6">
                 Antique Batik Malang adalah toko ternama di Indonesia yang
                 dikenal karena produk batik berkualitas tinggi serta desainnya
@@ -128,10 +128,7 @@ export default function BlogPage() {
                 berkat keramahan pemilik toko yang selalu menyambut pelanggan
                 dengan senyum hangat dan cerita tentang filosofi di balik setiap
                 motif batik.
-              </p>
 
-              <h2>Lebih dari Sekadar Toko Batik</h2>
-              <p className="mb-6">
                 Antique Batik Malang juga dikenal sebagai{" "}
                 <em>Pasar Buku dan Barang Antik</em> — destinasi menarik bagi
                 para penggemar barang antik dan pencinta benda-benda bersejarah.
@@ -152,9 +149,7 @@ export default function BlogPage() {
                 Antique Batik Malang bukan hanya tempat berbelanja, melainkan
                 perjalanan waktu — di mana tradisi, keindahan, dan kenangan
                 berpadu dalam setiap helai kain
-              </p>
 
-              <p className="mb-6">
                 Barang-barang yang ditawarkan di Antique Batik Malang dikenal
                 memiliki kualitas tinggi dan keaslian yang terjaga. Setiap karya
                 batik dibuat dengan sentuhan tangan para pengrajin lokal,
@@ -182,9 +177,7 @@ export default function BlogPage() {
                 hingga setiap benda antik yang berdebu, pengunjung dapat
                 merasakan kehangatan, cerita, dan nilai estetika yang hidup di
                 baliknya.
-              </p>
 
-              <p className="mb-6">
                 Antique Batik Malang bukan hanya tempat berbelanja, melainkan
                 perjalanan waktu — di mana tradisi, keindahan, dan kenangan
                 berpadu dalam setiap helai kain

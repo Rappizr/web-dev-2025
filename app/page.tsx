@@ -10,7 +10,7 @@ import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+  <main className="min-h-screen bg-gradient-to-br from-blue-100/40 via-white/60 to-blue-200/30">
       {/* Full-width sections */}
       <Header />
       <HeroSection />

@@ -21,9 +21,9 @@ export function FaqAccordion() {
   ]
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20d" data-aos="fade-up">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 pt-8 items-start">
           <div>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-balance">
               From Concept To Comfort, Your Way, And More.
@@ -36,17 +36,18 @@ export function FaqAccordion() {
           </div>
 
           <div>
-            <Accordion type="single" collapsible className="space-y-4">
+            <Accordion type="single" collapsible className="space-y-4" data-aos="fade-left">
               {faqs.map((faq, index) => (
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
                   className="bg-card border border-border rounded-lg px-6"
+                  data-aos="fade-up"
                 >
-                  <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                  <AccordionTrigger className="text-left font-semibold hover:no-underline" data-aos="fade-right">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground leading-relaxed">{faq.answer}</AccordionContent>
+                  <AccordionContent className="text-muted-foreground leading-relaxed" data-aos="fade-left">{faq.answer}</AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>

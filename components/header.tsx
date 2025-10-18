@@ -5,14 +5,14 @@ import { ChevronDown } from "lucide-react"
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border/30 bg-background/90 backdrop-blur-md">
-      <div className="container mx-auto px-6 lg:px-8">
-        <div className="flex h-14 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
+  <header className="sticky top-0 z-50 flex justify-center items-start bg-transparent m-0 p-0">
+      <div className="bg-white/10 border border-white/30 backdrop-blur-xl shadow-lg rounded-2xl px-8 py-2 flex items-center gap-8 mx-auto" style={{maxWidth: '900px'}}>
+        <div className="flex h-12 items-center w-full">
+          <Link href="/" className="flex items-center gap-2 mr-8">
             <div className="text-xl font-bold">Digfurn</div>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-6 flex-1">
             <Link href="#" className="text-sm font-medium hover:text-primary transition-colors">
               Home
             </Link>
@@ -34,24 +34,9 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link href="/blog" className="text-sm font-medium hover:text-primary transition-colors">
-              Blog
-            </Link>
-            <Link href="/categories" className="text-sm font-medium hover:text-primary transition-colors">
-              Categories
-            </Link>
-            <Link href="#" className="text-sm font-medium hover:text-primary transition-colors">
-              Contact
-            </Link>
-            <Link href="#" className="text-sm font-medium hover:text-primary transition-colors">
-              About Us
-            </Link>
-            <Link href="#" className="text-sm font-medium hover:text-primary transition-colors">
-              Who is
-            </Link>
           </nav>
 
-          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 ml-8">
             Login Now
           </Button>
         </div>

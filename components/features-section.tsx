@@ -24,32 +24,30 @@ export function FeaturesSection() {
   ]
 
   return (
-    <section className="py-20 bg-muted/30">
+  <section className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-5xl font-bold text-center mb-4 text-balance">
-          Saatnya UMKM Bersinar di Dunia Digital 
+        <h2 
+          className="text-2xl sm:text-5xl font-bold text-center mb-4 text-balance"
+          data-aos="fade-up"
+        >
+          Saatnya UMKM Bersinar di Dunia Digital
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8 mt-16">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-card border border-border rounded-xl p-8 hover:shadow-lg transition-shadow"
+              className="relative bg-white/80 border border-white/10 backdrop-blur-xl rounded-3xl p-8 hover:shadow-3xl hover:scale-105 transition-all duration-300 group"
+              data-aos="fade-up"
+              data-aos-easing="ease"
+              data-aos-duration="800"
+              data-aos-delay={index * 100}
             >
-              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6">
-                <feature.icon className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">{feature.title}</h3>
+              <p className="text-muted-foreground leading-relaxed group-hover:text-blue-900/80 transition-colors duration-300">{feature.description}</p>
             </div>
           ))}
         </div>
-
-        {/* <div className="flex justify-center mt-12">
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-            Temukan Potensimu
-          </Button>
-        </div> */}
       </div>
     </section>
   )

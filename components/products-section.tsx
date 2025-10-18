@@ -1,4 +1,5 @@
 import { Instagram, Linkedin, Twitter } from "lucide-react"
+import { Button } from "./ui/button"
 
 export function ProductsSection() {
   const products = [
@@ -25,7 +26,7 @@ export function ProductsSection() {
   ]
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4 text-balance">
           Kenali UMKM Khas Kotamu
@@ -39,6 +40,10 @@ export function ProductsSection() {
             <div
               key={index}
               className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
+              data-aos="fade-up"
+              data-aos-easing="ease"
+              data-aos-duration="800"
+              data-aos-delay={index * 120}
             >
               <div className="relative overflow-hidden aspect-square bg-muted">
                 <img
@@ -52,29 +57,19 @@ export function ProductsSection() {
                   <h3 className="font-bold text-lg">{product.name}</h3>
                   <p className="text-sm text-muted-foreground">{product.description}</p>
                 </div>
-                <div className="flex gap-2">
-                  <a
-                    href="#"
-                    className="w-8 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-primary/90 transition-colors"
-                  >
-                    <Instagram className="w-4 h-4 text-primary-foreground" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-8 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-primary/90 transition-colors"
-                  >
-                    <Linkedin className="w-4 h-4 text-primary-foreground" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-8 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-primary/90 transition-colors"
-                  >
-                    <Twitter className="w-4 h-4 text-primary-foreground" />
-                  </a>
-                </div>
               </div>
             </div>
           ))}
+        </div>
+        <div className="flex justify-center mt-12">
+          <Button
+            className="bg-primary text-primary-foreground hover:bg-primary/90 px-10 py-6 text-xl font-bold rounded-2xl shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+            data-aos="zoom-in"
+            data-aos-easing="ease"
+            data-aos-duration="800"
+          >
+            Selengkapnya
+          </Button>
         </div>
       </div>
     </section>

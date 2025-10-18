@@ -148,8 +148,15 @@ export default function CategoriesPage() {
         <div className="grid gap-10 lg:grid-cols-3">
           {/* Content */}
           <section className="lg:col-span-2 grid gap-8 sm:grid-cols-2">
-            {posts.map((post) => (
-              <Card key={post.id} className="overflow-hidden hover:shadow-sm transition-shadow p-0">
+            {posts.map((post, idx) => (
+              <Card 
+                key={post.id} 
+                className="group overflow-hidden hover:shadow-sm transition-shadow p-0 transition-all duration-200 active:scale-95 active:shadow-lg"
+                data-aos="fade-up"
+                data-aos-easing="ease"
+                data-aos-duration="800"
+                data-aos-delay={idx * 100}
+              >
                 <Link href="/detail-blog" className="block">
                   {/* Image */}
                   <div className="relative">
@@ -158,7 +165,7 @@ export default function CategoriesPage() {
                       alt={post.title}
                       width={520}
                       height={280}
-                      className="h-56 w-full object-cover"
+                      className="h-56 w-full object-cover transition-all duration-200 group-active:scale-95 group-active:shadow-lg"
                     />
                     <Badge className="absolute left-3 top-3 rounded px-2 py-1 text-[11px] tracking-wide">
                       {post.category}
@@ -192,7 +199,7 @@ export default function CategoriesPage() {
           {/* Sidebar */}
           <aside className="space-y-8">
             {/* Search Card */}
-            <Card>
+            <Card data-aos="fade-right" data-aos-duration="700" className="transition-all duration-200 active:scale-95 active:shadow-lg">
               <CardHeader>
                 <CardTitle>Search</CardTitle>
               </CardHeader>
@@ -203,7 +210,7 @@ export default function CategoriesPage() {
             </Card>
 
             {/* Categories Card */}
-            <Card>
+            <Card data-aos="fade-left" data-aos-duration="700" className="transition-all duration-200 active:scale-95 active:shadow-lg">
               <CardHeader>
                 <CardTitle>Categories</CardTitle>
               </CardHeader>
@@ -236,7 +243,7 @@ export default function CategoriesPage() {
             </Card>
 
             {/* Trending UMKM Card */}
-            <Card>
+            <Card data-aos="fade-up" data-aos-duration="700" className="transition-all duration-200 active:scale-95 active:shadow-lg">
               <CardHeader>
                 <CardTitle>Trending UMKM</CardTitle>
               </CardHeader>
@@ -256,7 +263,7 @@ export default function CategoriesPage() {
             </Card>
 
             {/* Newsletter Card */}
-            <Card className="bg-primary text-primary-foreground">
+            <Card className="bg-primary text-primary-foreground transition-all duration-200 active:scale-95 active:shadow-lg" data-aos="zoom-in" data-aos-duration="700">
               <CardHeader>
                 <CardTitle>Daftarkan UMKM Kamu Di Sini!</CardTitle>
               </CardHeader>

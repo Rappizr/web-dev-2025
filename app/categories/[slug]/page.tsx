@@ -8,6 +8,8 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { CalendarDays, Clock, ArrowUpRight } from "lucide-react"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 
 type Post = {
   id: number
@@ -126,141 +128,179 @@ const hotCategories = [
   { name: "NEWS", image: "/newspaper-daily-news.jpg" },
 ]
 
-export default function CategorySlugPage({ params }: { params: { slug: string } }) {
-  const label = params.slug.charAt(0).toUpperCase() + params.slug.slice(1)
-
+export default function CategorySlugPage() {
   return (
-    <main className="flex-1 container mx-auto px-6 lg:px-10 xl:px-12 py-8">
-      <div className="mb-8">
-        <h1 className="text-2xl font-semibold tracking-tight">Category: {label}</h1>
-        <p className="text-muted-foreground">Showing the same curated articles layout as the main Categories page.</p>
-      </div>
+    <div className="min-h-screen flex flex-col">
+      <Header />
 
-      <div className="grid gap-10 lg:grid-cols-3">
-        {/* Content (same as /categories) */}
-        <section className="lg:col-span-2 grid gap-8 sm:grid-cols-2">
-          {posts.map((post) => (
-            <Card key={post.id} className="overflow-hidden hover:shadow-sm transition-shadow">
-              <div className="relative">
-                <Image
-                  src={post.image || "/placeholder.svg"}
-                  alt={post.title}
-                  width={520}
-                  height={280}
-                  className="h-56 w-full object-cover"
-                />
-                <Badge className="absolute left-3 top-3 rounded px-2 py-1 text-[11px] tracking-wide">
-                  {post.category}
-                </Badge>
-              </div>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-balance text-lg leading-snug">
-                  <Link href="#" className="hover:text-primary">
-                    {post.title}
-                  </Link>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                <div className="mb-3 flex items-center gap-4">
-                  <span className="inline-flex items-center gap-1">
-                    <CalendarDays className="h-4 w-4" /> {post.date}
-                  </span>
-                  <span className="inline-flex items-center gap-1">
-                    <Clock className="h-4 w-4" /> {post.readTime}
-                  </span>
-                </div>
-                <p className="leading-6">{post.excerpt}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </section>
+      <main className="flex-1 container mx-auto px-6 lg:px-10 xl:px-12 py-8">
+        <div className="mb-8 overflow-hidden rounded-xl border border-border/40">
+          <Image
+            src="/images/categories-reference.jpg"
+            alt="Categories reference layout"
+            width={1600}
+            height={420}
+            priority
+            className="h-52 w-full object-cover"
+          />
+        </div>
 
-        {/* Sidebar (same as /categories) */}
-        <aside className="space-y-8">
-          <Card>
-            <CardHeader>
-              <CardTitle>Search</CardTitle>
-            </CardHeader>
-            <CardContent className="flex gap-2">
-              <Input placeholder="Search here..." />
-              <Button>Go</Button>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Hot Categories</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              {hotCategories.map((c) => (
-                <Link key={c.name} href="#" className="group block overflow-hidden rounded-lg border border-border/40">
+        <div className="grid gap-10 lg:grid-cols-3">
+          {/* Content */}
+          <section className="lg:col-span-2 grid gap-8 sm:grid-cols-2">
+            {posts.map((post, idx) => (
+              <Card 
+                key={post.id} 
+                className="group overflow-hidden hover:shadow-sm transition-shadow p-0 transition-all duration-200 active:scale-95 active:shadow-lg"
+                data-aos="fade-up"
+                data-aos-easing="ease"
+                data-aos-duration="800"
+                data-aos-delay={idx * 100}
+              >
+                <Link href="/detail-blog" className="block">
+                  {/* Image */}
                   <div className="relative">
                     <Image
-                      src={c.image || "/placeholder.svg"}
-                      alt={c.name}
-                      width={640}
-                      height={160}
-                      className="h-20 w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                      src={post.image || "/placeholder.svg"}
+                      alt={post.title}
+                      width={520}
+                      height={280}
+                      className="h-56 w-full object-cover transition-all duration-200 group-active:scale-95 group-active:shadow-lg"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent" />
-                    <div className="absolute left-3 top-2 flex items-center gap-2">
-                      <Badge variant="secondary" className="text-[11px]">
-                        {c.name}
-                      </Badge>
-                      <ArrowUpRight className="h-4 w-4 text-foreground/80" />
-                    </div>
+                    <Badge className="absolute left-3 top-3 rounded px-2 py-1 text-[11px] tracking-wide">
+                      {post.category}
+                    </Badge>
                   </div>
+
+                  {/* Title */}
+                  <CardHeader className="pb-1 pt-4 px-4">
+                    <CardTitle className="text-balance text-lg leading-snug line-clamp-2">
+                      {post.title}
+                    </CardTitle>
+                  </CardHeader>
+
+                  {/* Content */}
+                  <CardContent className="text-sm text-muted-foreground px-4 pb-4">
+                    {/* Star Rating */}
+                    <div className="flex items-center gap-1 text-primary mb-3" aria-label="5 out of 5 stars">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                      ))}
+                    </div>
+
+                    {/* Excerpt */}
+                    <p className="leading-6 line-clamp-3">{post.excerpt}</p>
+                  </CardContent>
                 </Link>
-              ))}
-            </CardContent>
-          </Card>
+              </Card>
+            ))}
+          </section>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Recent News</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {recentNews.map((n, i) => (
-                <div key={i} className="space-y-1">
-                  <Badge variant="outline" className="text-[10px]">
-                    {n.tag}
-                  </Badge>
-                  <Link href="#" className="block text-sm leading-6 hover:text-primary">
-                    {n.title}
+          {/* Sidebar */}
+          <aside className="space-y-8">
+            {/* Search Card */}
+            <Card data-aos="fade-right" data-aos-duration="700" className="transition-all duration-200 active:scale-95 active:shadow-lg">
+              <CardHeader>
+                <CardTitle>Search</CardTitle>
+              </CardHeader>
+              <CardContent className="flex gap-2">
+                <Input placeholder="Search here..." />
+                <Button>Go</Button>
+              </CardContent>
+            </Card>
+
+            {/* Categories Card */}
+            <Card data-aos="fade-left" data-aos-duration="700" className="transition-all duration-200 active:scale-95 active:shadow-lg">
+              <CardHeader>
+                <CardTitle>Categories</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                {hotCategories.map((category) => (
+                  <Link
+                    key={category.name}
+                    href="#"
+                    className="group block overflow-hidden rounded-lg border border-border/40"
+                  >
+                    <div className="relative">
+                      <Image
+                        src={category.image || "/placeholder.svg"}
+                        alt={category.name}
+                        width={640}
+                        height={160}
+                        className="h-20 w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent" />
+                      <div className="absolute left-3 top-2 flex items-center gap-2">
+                        <Badge variant="secondary" className="text-[11px]">
+                          {category.name}
+                        </Badge>
+                        <ArrowUpRight className="h-4 w-4 text-foreground/80" />
+                      </div>
+                    </div>
                   </Link>
-                  <Separator />
-                </div>
-              ))}
-            </CardContent>
-          </Card>
+                ))}
+              </CardContent>
+            </Card>
 
-          <Card className="bg-primary text-primary-foreground">
-            <CardHeader>
-              <CardTitle>Daily Newsletter</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <p className="text-sm/6 opacity-90">Get all the top stories from blogs to keep track.</p>
-              <Input
-                placeholder="Enter your e-mail"
-                className="bg-white text-foreground placeholder:text-muted-foreground"
-              />
-              <Button variant="secondary" className="w-full">
-                Subscribe Now
-              </Button>
-              <p className="text-xs opacity-80">I agree to the terms & conditions</p>
-            </CardContent>
-          </Card>
-        </aside>
-      </div>
+            {/* Trending UMKM Card */}
+            <Card data-aos="fade-up" data-aos-duration="700" className="transition-all duration-200 active:scale-95 active:shadow-lg">
+              <CardHeader>
+                <CardTitle>Trending UMKM</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {recentNews.map((news, index) => (
+                  <div key={index} className="space-y-1">
+                    <Badge variant="outline" className="text-[10px]">
+                      {news.tag}
+                    </Badge>
+                    <Link href="#" className="block text-sm leading-6 hover:text-primary">
+                      {news.title}
+                    </Link>
+                    <Separator />
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
 
-      <div className="mt-12 flex items-center justify-center gap-2">
-        <Button variant="outline" size="icon" aria-label="Page 1">
-          1
-        </Button>
-        <Button variant="ghost" size="icon" aria-label="Page 2">
-          2
-        </Button>
-      </div>
-    </main>
+            {/* Newsletter Card */}
+            <Card className="bg-primary text-primary-foreground transition-all duration-200 active:scale-95 active:shadow-lg" data-aos="zoom-in" data-aos-duration="700">
+              <CardHeader>
+                <CardTitle>Daftarkan UMKM Kamu Di Sini!</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-sm/6 opacity-90">
+                  Promosikan usahamu dan bergabung bersama komunitas pelaku UMKM inspiratif.
+                  Cukup kirimkan detail bisnis kamu melalui email kami.
+                </p>
+
+                <Button
+                  variant="secondary"
+                  className="w-full font-semibold"
+                  asChild
+                >
+                  <a href="mailto:umkm@yourdomain.com?subject=Pendaftaran%20UMKM&body=Halo,%20saya%20ingin%20mendaftarkan%20UMKM%20saya." target="_blank" rel="noopener noreferrer">
+                    Daftar sekarang
+                  </a>
+                </Button>
+
+              </CardContent>
+            </Card>
+
+          </aside>
+        </div>
+
+        {/* Pagination */}
+        <div className="mt-12 flex items-center justify-center gap-2">
+          <Button variant="outline" size="icon" aria-label="Page 1">
+            1
+          </Button>
+          <Button variant="ghost" size="icon" aria-label="Page 2">
+            2
+          </Button>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
   )
 }
