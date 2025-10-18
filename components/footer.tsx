@@ -33,9 +33,8 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-6">
-            <span className="text-sm">Privacy</span>
-            <span className="text-sm">Job</span>
-            <span className="text-sm">Design</span>
+            <span className="text-sm">About Us</span>
+            <span className="text-sm">Contact </span>
           </div>
           <div className="flex pb-8 gap-4">
             <a
