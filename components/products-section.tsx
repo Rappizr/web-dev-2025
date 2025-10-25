@@ -1,27 +1,26 @@
 import { Instagram, Linkedin, Twitter } from "lucide-react"
 import { Button } from "./ui/button"
+import Link from "next/link"
 
 export function ProductsSection() {
   const products = [
     {
-      name: "Culinary",
-      description: "Taste of Javanese Heritage",
-      image: "/images/culinary-javanese-food.jpg", // contoh: sate, gudeg, nasi liwet
+      name: "Kuliner",
+      description: "Berbagai rasa menggugah selera",
+      image: "/images/home-category/kuliner1.jpg", // contoh: sate, gudeg, nasi liwet
+      slug: "culinary"
     },
     {
       name: "Souvenir",
-      description: "Crafted with Local Love",
-      image: "/images/souvenir-batik-craft.jpg", // contoh: batik, kerajinan kayu, topeng
+      description: "Dibuat dengan kreasi lokal",
+      image: "/images/home-category/souvenir.jpg", // contoh: batik, kerajinan kayu, topeng
+      slug: "souvenir"
     },
     {
       name: "Fashion",
-      description: "Inspired by Tradition",
-      image: "/images/fashion-batik-modern.jpg", // contoh: busana batik modern
-    },
-    {
-      name: "Agriculture",
-      description: "Sustaining the Green Land",
-      image: "/images/agriculture-java-fields.jpg", // contoh: sawah, petani Jawa
+      description: "Dari tradisional hingga modern",
+      image: "/images/home-category/fashion.jpg", // contoh: busana batik modern
+      slug: "fashion"
     },
   ]
 
@@ -35,30 +34,35 @@ export function ProductsSection() {
           Dari kuliner hingga seni kerajinan, setiap kreasi mencerminkan jiwa komunitas lokal kita.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
           {products.map((product, index) => (
-            <div
-              key={index}
-              className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
-              data-aos="fade-up"
-              data-aos-easing="ease"
-              data-aos-duration="800"
-              data-aos-delay={index * 120}
+            <Link
+            href={`/categories/${product.slug}`}
+            key={index}
             >
-              <div className="relative overflow-hidden aspect-square bg-muted">
-                <img
-                  src={product.image || "/placeholder.svg"}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-4 flex items-center justify-between">
-                <div>
-                  <h3 className="font-bold text-lg">{product.name}</h3>
-                  <p className="text-sm text-muted-foreground">{product.description}</p>
+              <div
+                key={index}
+                className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
+                data-aos="fade-up"
+                data-aos-easing="ease"
+                data-aos-duration="800"
+                data-aos-delay={index * 120}
+              >
+                <div className="relative overflow-hidden aspect-square bg-muted">
+                  <img
+                    src={product.image || "/placeholder.svg"}
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-4 flex items-center justify-between">
+                  <div>
+                    <h3 className="font-bold text-lg">{product.name}</h3>
+                    <p className="text-sm text-muted-foreground">{product.description}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="flex justify-center mt-12">
@@ -68,7 +72,9 @@ export function ProductsSection() {
             data-aos-easing="ease"
             data-aos-duration="800"
           >
+            <Link href="/categories">
             Selengkapnya
+            </Link>
           </Button>
         </div>
       </div>

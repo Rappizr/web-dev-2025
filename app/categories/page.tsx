@@ -117,15 +117,13 @@ const posts: Post[] = [
 const recentNews = [
   { title: "Antique Batik: UMKM Menjual Batik Asli Malang", tag: "FASHION" },
   { title: "Kerajinan Topeng Malangan: Warisan Budaya dalam Sentuhan Modern", tag: "SOUVENIR" },
-  { title: "Bakso Bakar Pahlawan Trip: Kuliner Khas Malang yang Wajib Dicoba", tag: "CULINARY" },
-  { title: "Bibit Cabai Segar untuk Pemula: Peluang Usaha di Bidang Pertanian", tag: "AGRICULTURE" },
+  { title: "Bakso Bakar Pahlawan Trip: Kuliner Khas Malang yang Wajib Dicoba", tag: "KULINER" },
 ]
 
 const hotCategories = [
-  { name: "AGRICULTURE", image: "/tech-category-image.jpg" },
-  { name: "CULINARY", image: "/mobile-phones-flatlay.jpg" },
-  { name: "FASHION", image: "/gadget-dashboard.jpg" },
-  { name: "SOUVENIR", image: "/newspaper-daily-news.jpg" },
+  { name: "KULINER", image: "images/category/kuliner.jpg" },
+  { name: "FASHION", image: "images/category/fashion.jpg" },
+  { name: "SOUVENIR", image: "images/category/souvenir.jpg" },
 ]
 
 export default function CategoriesPage() {
@@ -136,7 +134,7 @@ export default function CategoriesPage() {
       <main className="flex-1 container mx-auto px-6 lg:px-10 xl:px-12 py-8">
         <div className="mb-8 overflow-hidden rounded-xl border border-border/40">
           <Image
-            src="/images/categories-reference.jpg"
+            src="/images/category/banner.jpg"
             alt="Categories reference layout"
             width={1600}
             height={420}
@@ -151,7 +149,7 @@ export default function CategoriesPage() {
             {posts.map((post, idx) => (
               <Card 
                 key={post.id} 
-                className="group overflow-hidden hover:shadow-sm transition-shadow p-0 transition-all duration-200 active:scale-95 active:shadow-lg"
+                className="group overflow-hidden hover:shadow-sm p-0 transition-all duration-200 active:scale-95 active:shadow-lg"
                 data-aos="fade-up"
                 data-aos-easing="ease"
                 data-aos-duration="800"

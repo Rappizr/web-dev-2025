@@ -151,7 +151,7 @@ export default function CategorySlugPage() {
             {posts.map((post, idx) => (
               <Card 
                 key={post.id} 
-                className="group overflow-hidden hover:shadow-sm transition-shadow p-0 transition-all duration-200 active:scale-95 active:shadow-lg"
+                className="group overflow-hidden hover:shadow-sm p-0 transition-all duration-200 active:scale-95 active:shadow-lg"
                 data-aos="fade-up"
                 data-aos-easing="ease"
                 data-aos-duration="800"

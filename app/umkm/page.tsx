@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState, ChangeEvent, FormEvent } from 'react';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
-import { Loader2, ArrowLeft } from 'lucide-react';
+import { useState, ChangeEvent, FormEvent } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { Loader2, ArrowLeft } from "lucide-react";
 
 interface ProductFormData {
   name: string;
@@ -11,17 +11,17 @@ interface ProductFormData {
   image: File | null;
   video: string;
   price: string;
-  category: ProductCategory | '';
+  category: ProductCategory | "";
 }
 
 export default function TambahUMKMPage() {
   const [formData, setFormData] = useState<ProductFormData>({
-    name: '',
-    description: '',
+    name: "",
+    description: "",
     image: null,
-    video: '',
-    price: '',
-    category: '',    
+    video: "",
+    price: "",
+    category: "",
   });
 
   const [preview, setPreview] = useState<string | null>(null);
@@ -30,7 +30,9 @@ export default function TambahUMKMPage() {
   const router = useRouter();
 
   // 🔹 Handle input teks & angka
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -50,7 +52,7 @@ export default function TambahUMKMPage() {
 
     const priceValue = parseFloat(formData.price);
     if (isNaN(priceValue)) {
-      setError('Harga harus berupa angka yang valid.');
+      setError("Harga harus berupa angka yang valid.");
       setIsLoading(false);
       return;
     }
@@ -58,26 +60,26 @@ export default function TambahUMKMPage() {
     try {
       // 🔹 Siapkan data form (termasuk file)
       const data = new FormData();
-      data.append('name', formData.name);
-      data.append('description', formData.description);
-      data.append('video', formData.video);
-      data.append('price', priceValue.toString());
-      if (formData.image) data.append('image', formData.image);
-      data.append('category', formData.category);
+      data.append("name", formData.name);
+      data.append("description", formData.description);
+      data.append("video", formData.video);
+      data.append("price", priceValue.toString());
+      if (formData.image) data.append("image", formData.image);
+      data.append("category", formData.category);
 
-      const response = await fetch('/api/products', {
-        method: 'POST',
+      const response = await fetch("/api/products", {
+        method: "POST",
         body: data,
       });
 
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error || 'Pendaftaran produk gagal.');
+        throw new Error(result.error || "Pendaftaran produk gagal.");
       }
 
-      alert('Produk UMKM berhasil didaftarkan!');
-      router.push('/umkm');
+      alert("Produk UMKM berhasil didaftarkan!");
+      router.push("/umkm");
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -155,28 +157,30 @@ export default function TambahUMKMPage() {
               className="w-full border border-gray-300 p-3 rounded-lg focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-200"
             />
           </div>
-{/* Kategori Produk */}
-<div className="form-group">
-  <label
-    className="block text-gray-700 font-semibold mb-2"
-    htmlFor="category"
-  >
-    Kategori Produk
-  </label>
-  <select
-    name="category"
-    id="category"
-    value={formData.category}
-    onChange={handleChange}
-    required
-    className="w-full border border-gray-300 p-3 rounded-lg focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-200"
-  >
-    <option value="" disabled>Pilih kategori</option>
-    {/* {Object.entries(ProductCategory).map(([key, value]) => (
+          {/* Kategori Produk */}
+          <div className="form-group">
+            <label
+              className="block text-gray-700 font-semibold mb-2"
+              htmlFor="category"
+            >
+              Kategori Produk
+            </label>
+            <select
+              name="category"
+              id="category"
+              value={formData.category}
+              onChange={handleChange}
+              required
+              className="w-full border border-gray-300 p-3 rounded-lg focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-200"
+            >
+              <option value="" disabled>
+                Pilih kategori
+              </option>
+              {/* {Object.entries(ProductCategory).map(([key, value]) => (
       <option key={key} value={key}>{value}</option>
     ))} */}
-  </select>
-</div>
+            </select>
+          </div>
 
           <div className="form-group">
             <label
@@ -197,67 +201,66 @@ export default function TambahUMKMPage() {
           </div>
 
           {/* Upload Gambar Produk */}
-<div className="form-group">
-  <label
-    htmlFor="image"
-    className="block text-gray-700 font-semibold mb-3"
-  >
-    Gambar Produk
-  </label>
+          <div className="form-group">
+            <label
+              htmlFor="image"
+              className="block text-gray-700 font-semibold mb-3"
+            >
+              Gambar Produk
+            </label>
 
-  <div
-    className="flex flex-col items-center justify-center w-full border-2 border-dashed border-gray-300 rounded-xl p-6 bg-gray-50 hover:bg-blue-50 hover:border-blue-400 transition-all duration-300 cursor-pointer"
-    onClick={() => document.getElementById('image')?.click()}
-  >
-    {preview ? (
-      <img
-        src={preview}
-        alt="Preview"
-        className="w-48 h-48 object-cover rounded-lg border shadow-md"
-      />
-    ) : (
-      <>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-12 h-12 text-gray-400 mb-3"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M3 16l4-4a3 3 0 014 0l4 4m-2-2l2-2a3 3 0 014 0l4 4M4 4h16v16H4z"
-          />
-        </svg>
-        <p className="text-gray-600 font-medium">
-          Klik untuk memilih gambar
-        </p>
-        <p className="text-xs text-gray-400 mt-1">
-          Format: JPG, PNG, GIF (maks 5MB)
-        </p>
-      </>
-    )}
+            <div
+              className="flex flex-col items-center justify-center w-full border-2 border-dashed border-gray-300 rounded-xl p-6 bg-gray-50 hover:bg-blue-50 hover:border-blue-400 transition-all duration-300 cursor-pointer"
+              onClick={() => document.getElementById("image")?.click()}
+            >
+              {preview ? (
+                <img
+                  src={preview}
+                  alt="Preview"
+                  className="w-48 h-48 object-cover rounded-lg border shadow-md"
+                />
+              ) : (
+                <>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-12 h-12 text-gray-400 mb-3"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 16l4-4a3 3 0 014 0l4 4m-2-2l2-2a3 3 0 014 0l4 4M4 4h16v16H4z"
+                    />
+                  </svg>
+                  <p className="text-gray-600 font-medium">
+                    Klik untuk memilih gambar
+                  </p>
+                  <p className="text-xs text-gray-400 mt-1">
+                    Format: JPG, PNG, GIF (maks 5MB)
+                  </p>
+                </>
+              )}
 
-    <input
-      type="file"
-      name="image"
-      id="image"
-      accept="image/*"
-      onChange={handleFileChange}
-      className="hidden"
-      required
-    />
-  </div>
+              <input
+                type="file"
+                name="image"
+                id="image"
+                accept="image/*"
+                onChange={handleFileChange}
+                className="hidden"
+                required
+              />
+            </div>
 
-  {preview && (
-    <p className="text-center text-sm text-gray-500 mt-2 italic">
-      Gambar berhasil dipilih
-    </p>
-  )}
-</div>
-
+            {preview && (
+              <p className="text-center text-sm text-gray-500 mt-2 italic">
+                Gambar berhasil dipilih
+              </p>
+            )}
+          </div>
 
           {/* URL Video */}
           <div className="form-group">
@@ -311,7 +314,7 @@ export default function TambahUMKMPage() {
                   Memproses...
                 </>
               ) : (
-                'Daftarkan Produk UMKM'
+                "Daftarkan Produk UMKM"
               )}
             </button>
           </div>
