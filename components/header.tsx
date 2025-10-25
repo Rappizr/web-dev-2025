@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
+import Image from 'next/image';
+
 
 export function Header() {
   const router = useRouter();
@@ -20,9 +22,11 @@ export function Header() {
         style={{ maxWidth: "900px" }}
       >
         <div className="flex h-12 items-center w-full">
-          <Link href="/" className="flex items-center gap-2 mr-8">
-            <div className="text-xl font-bold">Digfurn</div>
-          </Link>
+          <Link href="/" className="flex items-center gap-2 mr-5">
+    <div className="w-12 h-auto">
+      <Image src="/logo/UMK icon.svg" alt="UMK Logo" width={100} height={40} />
+    </div>
+  </Link>
 
           <nav className="hidden md:flex items-center gap-6 flex-1">
             <Link href="#" className="text-sm font-medium hover:text-primary transition-colors">
