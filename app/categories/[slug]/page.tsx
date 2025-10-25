@@ -116,16 +116,15 @@ const posts: Post[] = [
 ]
 
 const recentNews = [
-  { title: "Inspiring Web Design And UX Showcases", tag: "ADVENTURE" },
-  { title: "Getting Internationalization Right With Remix And", tag: "CULTURE" },
-  { title: "A Step-By-Step Guide To Building Accessible Carousels", tag: "TRAVEL" },
+  { title: "Antique Batik: UMKM Menjual Batik Asli Malang", tag: "FASHION" },
+  { title: "Kerajinan Topeng Malangan: Warisan Budaya dalam Sentuhan Modern", tag: "SOUVENIR" },
+  { title: "Bakso Bakar Pahlawan Trip: Kuliner Khas Malang yang Wajib Dicoba", tag: "KULINER" },
 ]
 
 const hotCategories = [
-  { name: "TECHNOLOGY", image: "/tech-category-image.jpg" },
-  { name: "MOBILE", image: "/mobile-phones-flatlay.jpg" },
-  { name: "GADGET", image: "/gadget-dashboard.jpg" },
-  { name: "NEWS", image: "/newspaper-daily-news.jpg" },
+  { name: "KULINER", image: "images/category/kuliner.jpg" },
+  { name: "FASHION", image: "images/category/fashion.jpg" },
+  { name: "SOUVENIR", image: "images/category/souvenir.jpg" },
 ]
 
 export default function CategorySlugPage() {
@@ -136,7 +135,7 @@ export default function CategorySlugPage() {
       <main className="flex-1 container mx-auto px-6 lg:px-10 xl:px-12 py-8">
         <div className="mb-8 overflow-hidden rounded-xl border border-border/40">
           <Image
-            src="/images/categories-reference.jpg"
+            src="/images/category/banner.jpg"
             alt="Categories reference layout"
             width={1600}
             height={420}

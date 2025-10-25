@@ -5,42 +5,42 @@ import Link from "next/link"
 export function FaqAccordion() {
   const faqs = [
     {
-      question: "What is Digfurn Furniture?",
+      question: "Apa itu UMK Malang?",
       answer:
-        "Digfurn creates a UI/UX design for your website and app. We provide the best quality and affordable prices for you, innovation and technology.",
+        "UMK Malang adalah platform digital yang memperkenalkan produk-produk UMKM khas Kota Malang kepada masyarakat luas. Kami membantu pelaku UMKM mempromosikan dan mengembangkan usahanya secara online.",
     },
     {
-      question: "Do You Offer Smart Furniture?",
+      question: "Apakah UMK Malang membantu promosi produk?",
       answer:
-        "Yes, we offer a wide range of smart furniture solutions that integrate seamlessly with modern home automation systems. Our smart furniture combines functionality with cutting-edge technology.",
+        "Ya, UMK Malang menyediakan berbagai fitur promosi digital untuk membantu pelaku UMKM memperluas jangkauan pasar mereka, baik secara lokal maupun nasional.",
     },
     {
-      question: "Do You Offer Export Service?",
+      question: "Apakah bisa bergabung sebagai pelaku UMKM?",
       answer:
-        "We provide international shipping and export services to customers worldwide. Our team handles all logistics and ensures safe delivery of your furniture pieces.",
+        "Tentu saja! Anda dapat mendaftar sebagai pelaku UMKM di platform UMK Malang untuk mempromosikan produk, mendapatkan pelatihan, serta terhubung dengan pembeli dan mitra bisnis lainnya.",
     },
   ]
 
   return (
-    <section className="py-20d" data-aos="fade-up">
+    <section className="py-20" data-aos="fade-up">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 pt-8 items-start">
           <div>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-balance">
-              From Concept To Comfort, Your Way, And More.
+              Dari UMKM Lokal untuk Indonesia.
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              Digfurn creates a UI/UX design for your website and app. We provide the best quality and affordable prices
-              for you, innovation and technology that you need.
+            <p className="text-muted-foreground leading-relaxed mb-5">
+              UMK Malang hadir sebagai wadah digital yang memperkenalkan berbagai produk khas Kota Malang. 
+              Kami berkomitmen membantu pelaku UMKM untuk tumbuh, berinovasi, dan menjangkau pasar yang lebih luas.
             </p>
-              <Button
+            <Button
               asChild
-              className="mt-6 w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90"
-              >
-                <Link href="/categories">
-                Show More
-                </Link>
-              </Button>
+              className=" w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90"
+            >
+              <Link href="/categories">
+                Lihat Lebih Banyak
+              </Link>
+            </Button>
           </div>
 
           <div>
@@ -55,7 +55,9 @@ export function FaqAccordion() {
                   <AccordionTrigger className="text-left font-semibold hover:no-underline" data-aos="fade-right">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground leading-relaxed" data-aos="fade-left">{faq.answer}</AccordionContent>
+                  <AccordionContent className="text-muted-foreground leading-relaxed" data-aos="fade-left">
+                    {faq.answer}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>

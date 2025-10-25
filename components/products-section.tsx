@@ -5,21 +5,21 @@ import Link from "next/link"
 export function ProductsSection() {
   const products = [
     {
-      name: "Culinary",
-      description: "Taste of Javanese Heritage",
-      image: "/images/culinary-javanese-food.jpg", // contoh: sate, gudeg, nasi liwet
+      name: "Kuliner",
+      description: "Berbagai rasa menggugah selera",
+      image: "/images/home-category/kuliner1.jpg", // contoh: sate, gudeg, nasi liwet
       slug: "culinary"
     },
     {
       name: "Souvenir",
-      description: "Crafted with Local Love",
-      image: "/images/souvenir-batik-craft.jpg", // contoh: batik, kerajinan kayu, topeng
+      description: "Dibuat dengan kreasi lokal",
+      image: "/images/home-category/souvenir.jpg", // contoh: batik, kerajinan kayu, topeng
       slug: "souvenir"
     },
     {
       name: "Fashion",
-      description: "Inspired by Tradition",
-      image: "/images/fashion-batik-modern.jpg", // contoh: busana batik modern
+      description: "Dari tradisional hingga modern",
+      image: "/images/home-category/fashion.jpg", // contoh: busana batik modern
       slug: "fashion"
     },
   ]
