@@ -2,6 +2,7 @@
 import dynamic from 'next/dynamic';
 import useEmblaCarousel from 'embla-carousel-react';
 import React from 'react';
+import Link from 'next/link';
 const heroSlides = [
   {
     image: '/images/blog-hero.jpg',
@@ -63,11 +64,14 @@ export function HeroSection() {
                     <p className="text-xl sm:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed mb-8" data-aos="fade-up" data-aos-delay="200">
                       {slide.desc}
                     </p>
-                    <a href="#cta" className="inline-block" data-aos="zoom-in" data-aos-delay="400">
-                      <button className="bg-accent text-primary font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-primary hover:text-accent transition-all duration-300 text-lg">
-                        {slide.button}
-                      </button>
-                    </a>
+                    <Link 
+                      href="/categories" // <-- Arahkan ke /categories
+                      className="inline-block bg-accent text-primary font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-primary hover:text-accent transition-all duration-300 text-lg" // <-- Gabungan styling dari <a> dan <button>
+                      data-aos="zoom-in" 
+                      data-aos-delay="400"
+                    >
+                      {slide.button}
+                    </Link>
                   </div>
                   {/* Pagination dots di dalam image hero */}
                   <div className="flex justify-center gap-2 mt-8 absolute left-0 right-0 bottom-8 z-20">
