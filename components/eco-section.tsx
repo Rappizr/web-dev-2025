@@ -13,7 +13,7 @@ export function EcoSection() {
             backgroundPosition: 'center',
           }}
         >
-          <div className="absolute inset-0 bg-blue-500/40 backdrop-blur-sm z-0" />
+          <div className="absolute inset-0 bg-blue-400/40 backdrop-blur-sm z-0" />
           <div className="flex flex-col gap-6 sm:gap-0 sm:flex-row items-center justify-between w-full relative z-10">
             <div data-aos="zoom-in">
               <p className="text-3xl sm:text-4xl font-extrabold text-left drop-shadow-xl mb-2 text-white">

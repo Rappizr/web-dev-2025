@@ -7,26 +7,27 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 
 const testimonials = [
   {
-    rating: 5,
-    text: "Digfurn creates a UI/UX design for your website and app. We provide the best quality and affordable prices for you, innovation and technology.",
-    author: "John Doe",
-    role: "Digfurn • Creative UI/UX Designer • Founder & CEO",
-    image: "/avatars/john.jpg",
-  },
-  {
-    rating: 5,
-    text: "Outstanding service and exceptional quality. The team delivered beyond our expectations with innovative solutions and professional approach.",
-    author: "Sarah Johnson",
-    role: "Product Manager at TechCorp",
-    image: "/avatars/sarah.jpg",
-  },
-  {
-    rating: 5,
-    text: "The attention to detail and commitment to excellence is remarkable. Highly recommend for anyone looking for premium design services.",
-    author: "Michael Chen",
-    role: "Founder at StartupHub",
-    image: "/avatars/michael.jpg",
-  },
+  rating: 5,
+  text: "UMK Malang benar-benar membantu usaha saya dikenal lebih luas! Berkat platform ini, produk lokal kami bisa menjangkau pelanggan baru dari berbagai daerah.",
+  author: "Siti Rahma",
+  role: "Pemilik Kedai Kopi Nusantara • UMKM Malang",
+  image: "/placeholder-user.jpg",
+},
+{
+  rating: 5,
+  text: "Layanan dan dukungan dari tim UMK Malang luar biasa. Mereka tidak hanya memberi ruang promosi, tapi juga membantu kami memahami strategi digital dengan mudah.",
+  author: "Budi Santoso",
+  role: "Pengrajin Kayu • Malang Creative Wood",
+  image: "/placeholder-user.jpg",
+},
+{
+  rating: 5,
+  text: "Platform ini jadi jembatan bagi pelaku UMKM untuk berkembang. Desain website yang menarik dan fitur promosi sangat membantu menaikkan penjualan.",
+  author: "Lina Kusuma",
+  role: "Pemilik Batik Tulis Aruna • UMKM Malang",
+  image: "/placeholder-user.jpg",
+},
+
 ]
 
 export function TestimonialsCarousel() {

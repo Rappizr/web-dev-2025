@@ -31,16 +31,12 @@ export function FaqAccordion() {
         <div className="grid lg:grid-cols-2 gap-12 pt-8 items-start">
           <div>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-balance">
-              Dari UMKM Lokal untuk Indonesia.
+              Dari UMKM Lokal untuk Kita Semua.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Digfurn creates a UI/UX design for your website and app. We
-              provide the best quality and affordable prices for you, innovation
-              and technology that you need.
+              Kami hadir sebagai platform digital yang membantu UMKM lokal untuk tumbuh dan dikenal lebih luas.
+              Dukung produk kreatif Indonesia, kembangkan bisnis bersama, dan majukan ekonomi lokal melalui kolaborasi dan inovasi.
             </p>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-              Show More
-            </Button>
           </div>
 
           <div>

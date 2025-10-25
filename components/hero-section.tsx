@@ -64,7 +64,7 @@ export function HeroSection() {
                 />
 
                 {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/60 to-background/80 backdrop-blur-sm z-0" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/50 via-primary/30 to-background/80 backdrop-blur-sm z-0" />
 
                 {/* Content */}
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full relative z-10 flex flex-col items-center gap-8 w-full justify-center">

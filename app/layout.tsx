@@ -7,10 +7,18 @@ import AOSProvider from "@/components/AOSProvider";
 import Provider from './Provider'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
-}
+  title: 'UMK Malang',
+  description: 'Platform digital UMKM Malang',
+  generator: 'Next.js',
+  icons: {
+    icon: [
+      { url: '/logo/icon color.svg' },
+      { url: '/logo/icon color.svg', sizes: '32x32', type: 'image/png' },
+      { url: '/logo/icon color.svg', sizes: '16x16', type: 'image/png' },
+    ],
+  },
+};
+
 
 export default function RootLayout({
   children,

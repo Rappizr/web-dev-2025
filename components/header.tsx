@@ -14,15 +14,15 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 flex justify-center items-start bg-transparent m-0 p-0">
       <div
-        className="bg-white/10 border border-white/30 backdrop-blur-xl shadow-lg rounded-2xl px-8 py-2 flex items-center justify-between gap-8 mx-auto"
+        className="bg-white/10 border border-white/30 backdrop-blur-xl shadow-lg rounded-b-xl px-8 py-2 flex items-center justify-between gap-8 mx-auto"
         style={{ maxWidth: "900px" }}
       >
         <div className="flex h-12 items-center w-full justify-between">
           {/* kiri: logo + menu */}
           <div className="flex items-center gap-10">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-12 h-auto">
-                <Image src="/logo/UMK icon.svg" alt="UMK Logo" width={100} height={40} />
+            <Link href="/" className="flex items-center">
+              <div className="transform scale-125 origin-left">
+                <Image src="/logo/logo color.svg" alt="UMK Logo" width={100} height={40} />
               </div>
             </Link>
 
