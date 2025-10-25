@@ -23,7 +23,7 @@ export function EcoSection() {
                 Tampilkan produk milikmu, jangkau lebih banyak pelanggan, akses peluangmu <br /> dan berkembang bersama komunitas kota yang dinamis.
               </p>
             </div>
-            <Link href="/login" className="" data-aos="fade-left">
+            <Link href="/umkm" className="" data-aos="fade-left">
               <Button
                 size="lg"
                 className="bg-white/80 text-blue-900 font-bold text-lg px-12 py-7 rounded-2xl shadow-xl hover:bg-white hover:scale-105 hover:shadow-2xl transition-all duration-300"
