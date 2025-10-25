@@ -276,9 +276,9 @@ export default function CategoriesPage() {
                   className="w-full font-semibold"
                   asChild
                 >
-                  <a href="mailto:umkm@yourdomain.com?subject=Pendaftaran%20UMKM&body=Halo,%20saya%20ingin%20mendaftarkan%20UMKM%20saya." target="_blank" rel="noopener noreferrer">
-                    Daftar sekarang
-                  </a>
+                  <Link href="/login">
+                    Daftar Sekarang
+                  </Link>
                 </Button>
 
               </CardContent>
