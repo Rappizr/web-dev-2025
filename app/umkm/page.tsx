@@ -11,6 +11,7 @@ interface ProductFormData {
   image: File | null;
   video: string;
   price: string;
+  category: ProductCategory | '';
 }
 
 export default function TambahUMKMPage() {
@@ -20,6 +21,7 @@ export default function TambahUMKMPage() {
     image: null,
     video: '',
     price: '',
+    category: '',    
   });
 
   const [preview, setPreview] = useState<string | null>(null);
@@ -61,6 +63,7 @@ export default function TambahUMKMPage() {
       data.append('video', formData.video);
       data.append('price', priceValue.toString());
       if (formData.image) data.append('image', formData.image);
+      data.append('category', formData.category);
 
       const response = await fetch('/api/products', {
         method: 'POST',
@@ -149,6 +152,46 @@ export default function TambahUMKMPage() {
               onChange={handleChange}
               required
               rows={4}
+              className="w-full border border-gray-300 p-3 rounded-lg focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-200"
+            />
+          </div>
+{/* Kategori Produk */}
+<div className="form-group">
+  <label
+    className="block text-gray-700 font-semibold mb-2"
+    htmlFor="category"
+  >
+    Kategori Produk
+  </label>
+  <select
+    name="category"
+    id="category"
+    value={formData.category}
+    onChange={handleChange}
+    required
+    className="w-full border border-gray-300 p-3 rounded-lg focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-200"
+  >
+    <option value="" disabled>Pilih kategori</option>
+    {/* {Object.entries(ProductCategory).map(([key, value]) => (
+      <option key={key} value={key}>{value}</option>
+    ))} */}
+  </select>
+</div>
+
+          <div className="form-group">
+            <label
+              className="block text-gray-700 font-semibold mb-2"
+              htmlFor="lokasi"
+            >
+              Lokasi
+            </label>
+            <input
+              type="text"
+              name="lokasi"
+              id="lokasi"
+              value={formData.lokasi}
+              onChange={handleChange}
+              required
               className="w-full border border-gray-300 p-3 rounded-lg focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-200"
             />
           </div>
@@ -250,7 +293,7 @@ export default function TambahUMKMPage() {
               value={formData.price}
               onChange={handleChange}
               required
-              step="0.01"
+              step="1000"
               className="w-full border border-gray-300 p-3 rounded-lg focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-200"
             />
           </div>

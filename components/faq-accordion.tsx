@@ -1,5 +1,10 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Button } from "@/components/ui/button"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 
 export function FaqAccordion() {
   const faqs = [
@@ -18,7 +23,7 @@ export function FaqAccordion() {
       answer:
         "We provide international shipping and export services to customers worldwide. Our team handles all logistics and ensures safe delivery of your furniture pieces.",
     },
-  ]
+  ];
 
   return (
     <section className="py-20d" data-aos="fade-up">
@@ -29,14 +34,22 @@ export function FaqAccordion() {
               From Concept To Comfort, Your Way, And More.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Digfurn creates a UI/UX design for your website and app. We provide the best quality and affordable prices
-              for you, innovation and technology that you need.
+              Digfurn creates a UI/UX design for your website and app. We
+              provide the best quality and affordable prices for you, innovation
+              and technology that you need.
             </p>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">Show More</Button>
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+              Show More
+            </Button>
           </div>
 
           <div>
-            <Accordion type="single" collapsible className="space-y-4" data-aos="fade-left">
+            <Accordion
+              type="single"
+              collapsible
+              className="space-y-4"
+              data-aos="fade-left"
+            >
               {faqs.map((faq, index) => (
                 <AccordionItem
                   key={index}
@@ -44,10 +57,18 @@ export function FaqAccordion() {
                   className="bg-card border border-border rounded-lg px-6"
                   data-aos="fade-up"
                 >
-                  <AccordionTrigger className="text-left font-semibold hover:no-underline" data-aos="fade-right">
+                  <AccordionTrigger
+                    className="text-left font-semibold hover:no-underline"
+                    data-aos="fade-right"
+                  >
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground leading-relaxed" data-aos="fade-left">{faq.answer}</AccordionContent>
+                  <AccordionContent
+                    className="text-muted-foreground leading-relaxed"
+                    data-aos="fade-left"
+                  >
+                    {faq.answer}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
@@ -55,5 +76,5 @@ export function FaqAccordion() {
         </div>
       </div>
     </section>
-  )
+  );
 }
