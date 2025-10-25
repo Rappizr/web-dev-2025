@@ -37,13 +37,13 @@ export function Header() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start" className="min-w-[180px]">
                   <DropdownMenuItem asChild>
-                    <Link href="/categories/technology">Kuliner</Link>
+                    <Link href="/categories">Kuliner</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/categories/lifestyle">Souvenir</Link>
+                    <Link href="/categories">Souvenir</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/categories/business">Fashion</Link>
+                    <Link href="/categories">Fashion</Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
