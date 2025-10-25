@@ -1,7 +1,8 @@
 "use client";
-import dynamic from "next/dynamic";
-import useEmblaCarousel from "embla-carousel-react";
-import React from "react";
+import dynamic from 'next/dynamic';
+import useEmblaCarousel from 'embla-carousel-react';
+import React from 'react';
+import Link from 'next/link';
 
 const heroSlides = [
   {
@@ -78,11 +79,14 @@ export function HeroSection() {
                     >
                       {slide.desc}
                     </p>
-                    <a href="#cta" className="inline-block" data-aos="zoom-in" data-aos-delay="400">
-                      <button className="bg-accent text-primary font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-primary hover:text-accent transition-all duration-300 text-lg">
-                        {slide.button}
-                      </button>
-                    </a>
+                    <Link 
+                      href="/categories"
+                      className="inline-block bg-accent text-primary font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-primary hover:text-accent transition-all duration-300 text-lg"
+                      data-aos="zoom-in" 
+                      data-aos-delay="400"
+                    >
+                      {slide.button}
+                    </Link>
                   </div>
 
                   {/* Pagination dots */}

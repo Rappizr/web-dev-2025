@@ -54,10 +54,12 @@ export function Header() {
           {/* Tombol Login */}
           <Button
             size="sm"
-            onClick={handleLogin}
+            asChild
             className="bg-primary text-primary-foreground hover:bg-primary/90 ml-8 transition-all duration-200"
           >
-            Login Now
+            <a href="/login" target="_blank" rel="noopener noreferrer">
+                    Login Now
+            </a>
           </Button>
         </div>
       </div>

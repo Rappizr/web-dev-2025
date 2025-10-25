@@ -1,5 +1,6 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export function FaqAccordion() {
   const faqs = [
@@ -32,7 +33,14 @@ export function FaqAccordion() {
               Digfurn creates a UI/UX design for your website and app. We provide the best quality and affordable prices
               for you, innovation and technology that you need.
             </p>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">Show More</Button>
+              <Button
+              asChild
+              className="mt-6 w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90"
+              >
+                <Link href="/categories">
+                Show More
+                </Link>
+              </Button>
           </div>
 
           <div>
