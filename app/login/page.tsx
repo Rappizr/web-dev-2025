@@ -17,12 +17,12 @@ export default function Login() {
 
   return (
     <main className="min-h-screen flex justify-center items-center bg-primary">
-      <div className="absolute top-0 left-0 right-0 bottom-0 bg-cover bg-center opacity-50" style={{ backgroundImage: 'url("/images/tech-category-image.jpg")' }}></div>
+      <div className="absolute top-0 left-0 right-0 bottom-0 bg-cover bg-center opacity-50" style={{ backgroundImage: 'url("")' }}></div>
 
       <div className="relative w-full max-w-md p-8 bg-white/30 backdrop-blur-lg shadow-xl rounded-xl z-10">
         <div className="text-center mb-8">
-          <img src="/logo.svg" alt="UMKM Logo" className="w-20 mx-auto mb-4" />
-          <h2 className="text-3xl font-bold text-white">Selamat Datang</h2>
+          <img src="/logo/icon white.svg" alt="UMKM Logo" className="w-16 mx-auto mb-4" />
+          <h2 className="text-3xl font-bold text-white">UMK Malang</h2>
           <p className="text-lg text-white/80 mt-2">Kenali UMKM lebih dekat disini</p>
         </div>
 

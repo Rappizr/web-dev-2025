@@ -27,9 +27,9 @@ export default function Register() {
       
       <div className="relative w-full max-w-md p-8 bg-white/30 backdrop-blur-lg shadow-xl rounded-xl z-10">
         <div className="text-center mb-8">
-          <img src="/logo.svg" alt="UMKM Logo" className="w-20 mx-auto mb-4" />
-          <h2 className="text-3xl font-bold text-white">Daftar Akun</h2>
-          <p className="text-lg text-white/80 mt-2">Bergabung dan kenali UMKM lebih dekat</p>
+           <img src="/logo/icon white.svg" alt="UMKM Logo" className="w-16 mx-auto mb-4" />
+          <h2 className="text-3xl font-bold text-white">UMK Malang</h2>
+          <p className="text-lg text-white/80 mt-2">Bergabung untuk kenali UMKM lebih dekat</p>
         </div>
         
         <form onSubmit={handleRegister} className="space-y-6">
