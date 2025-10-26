@@ -18,11 +18,11 @@ export default function BlogPage() {
   const [hoverRating, setHoverRating] = useState(0);
 
   // Komponen Stars untuk display saja (tidak interaktif)
-  function DisplayStars({ 
-    value = 5, 
-    className = "" 
-  }: { 
-    value?: number; 
+  function DisplayStars({
+    value = 5,
+    className = "",
+  }: {
+    value?: number;
     className?: string;
   }) {
     return (
@@ -43,18 +43,18 @@ export default function BlogPage() {
   }
 
   // Komponen Stars yang interaktif untuk form
-  function InteractiveStars({ 
-    value = 0, 
+  function InteractiveStars({
+    value = 0,
     onChange,
-    className = "" 
-  }: { 
-    value?: number; 
+    className = "",
+  }: {
+    value?: number;
     onChange?: (value: number) => void;
     className?: string;
   }) {
     return (
-      <div 
-        className={`flex items-center gap-1 ${className}`} 
+      <div
+        className={`flex items-center gap-1 ${className}`}
         aria-label={`${value} star rating`}
       >
         {[1, 2, 3, 4, 5].map((star) => (
@@ -76,7 +76,7 @@ export default function BlogPage() {
         ))}
         {value > 0 && (
           <span className="ml-2 text-sm text-muted-foreground">
-            {value} {value === 1 ? 'star' : 'stars'}
+            {value} {value === 1 ? "star" : "stars"}
           </span>
         )}
       </div>
@@ -90,9 +90,9 @@ export default function BlogPage() {
 
       <main className="flex-1 container mx-auto px-6 lg:px-10 xl:px-12 py-8">
         {/* Cover image */}
-  <div className="overflow-hidden rounded-xl border bg-card">
+        <div className="overflow-hidden rounded-xl border bg-card">
           <Image
-            src="/images/blog-hero.jpg"
+            src="/umkm/antique-batik.jpg"
             alt="Modern UI navigation interface showing menu structures and user flow"
             width={1600}
             height={900}
@@ -127,9 +127,7 @@ export default function BlogPage() {
                 ditemukan di tempat lain. Pengalaman berbelanja semakin berkesan
                 berkat keramahan pemilik toko yang selalu menyambut pelanggan
                 dengan senyum hangat dan cerita tentang filosofi di balik setiap
-                motif batik.
-
-                Antique Batik Malang juga dikenal sebagai{" "}
+                motif batik. Antique Batik Malang juga dikenal sebagai{" "}
                 <em>Pasar Buku dan Barang Antik</em> — destinasi menarik bagi
                 para penggemar barang antik dan pencinta benda-benda bersejarah.
                 Di sini, nuansa nostalgia berpadu dengan keindahan budaya lokal,
@@ -148,18 +146,17 @@ export default function BlogPage() {
               <p className="mb-6">
                 Antique Batik Malang bukan hanya tempat berbelanja, melainkan
                 perjalanan waktu — di mana tradisi, keindahan, dan kenangan
-                berpadu dalam setiap helai kain
-
-                Barang-barang yang ditawarkan di Antique Batik Malang dikenal
-                memiliki kualitas tinggi dan keaslian yang terjaga. Setiap karya
-                batik dibuat dengan sentuhan tangan para pengrajin lokal,
-                membawa semangat tradisi Jawa Timur yang kuat.
+                berpadu dalam setiap helai kain Barang-barang yang ditawarkan di
+                Antique Batik Malang dikenal memiliki kualitas tinggi dan
+                keaslian yang terjaga. Setiap karya batik dibuat dengan sentuhan
+                tangan para pengrajin lokal, membawa semangat tradisi Jawa Timur
+                yang kuat.
               </p>
 
               <div className="my-8 flex justify-center">
                 <div className="w-full max-w-3xl">
                   <Image
-                    src="/images/antique-batik-malang.jpg"
+                    src="/images/detail-blog.jpg"
                     alt="Antique Batik Malang - toko batik dan pasar barang antik di Malang"
                     width={800}
                     height={450}
@@ -176,11 +173,9 @@ export default function BlogPage() {
                 — melainkan pengalaman budaya. Dari setiap kain batik yang halus
                 hingga setiap benda antik yang berdebu, pengunjung dapat
                 merasakan kehangatan, cerita, dan nilai estetika yang hidup di
-                baliknya.
-
-                Antique Batik Malang bukan hanya tempat berbelanja, melainkan
-                perjalanan waktu — di mana tradisi, keindahan, dan kenangan
-                berpadu dalam setiap helai kain
+                baliknya. Antique Batik Malang bukan hanya tempat berbelanja,
+                melainkan perjalanan waktu — di mana tradisi, keindahan, dan
+                kenangan berpadu dalam setiap helai kain
               </p>
 
               <p className="mb-6">
@@ -266,8 +261,8 @@ export default function BlogPage() {
                     <span className="text-sm text-muted-foreground">
                       Your rating
                     </span>
-                    <InteractiveStars 
-                      value={commentRating} 
+                    <InteractiveStars
+                      value={commentRating}
                       onChange={setCommentRating}
                     />
                   </div>
