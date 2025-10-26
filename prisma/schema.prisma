@@ -14,12 +14,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Category {
+  KULINER
+  SOUVENIR
+  FASHION
+}
+
 model Product {
   id Int @id @default(autoincrement())
   name String
-  description String
-  image String
-  video String
+  description String @db.Text
+  image String?
+  video String?
   price Int
-  category String
+  category Category
+  lokasi String?
 }

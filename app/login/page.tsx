@@ -3,16 +3,28 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Eye, EyeOff } from 'lucide-react'; 
+import { signIn } from 'next-auth/react';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false); 
   const router = useRouter();
+  const [error, setError] = useState('');
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    router.push('/');
+    setError('');
+    const result = await signIn('credentials', {
+      redirect: false,
+      email: email,
+      password: password,
+    });
+    if (result?.error) {
+      setError('Login gagal. Cek kembali email dan password Anda.');
+    } else if (result?.ok) {
+      router.push('/');
+    }
   };
 
   return (
@@ -68,6 +80,12 @@ export default function Login() {
             </div>
           </div>
 
+          {error && (
+            <p className="text-sm text-red-300 bg-red-800/50 p-3 rounded-lg text-center">
+              {error}
+            </p>
+          )}
+          
           {/* Login Button */}
           <button
             type="submit"
