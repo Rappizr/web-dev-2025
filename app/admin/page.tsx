@@ -489,25 +489,9 @@ export default function AdminDashboard() {
             setPage={setActivePage}
           />
           <NavItem
-            icon={<Users size={20} />}
-            label="Pengguna"
-            pageKey="pengguna"
-            open={sidebarOpen}
-            activePage={activePage}
-            setPage={setActivePage}
-          />
-          <NavItem
             icon={<BarChart3 size={20} />}
             label="Laporan"
             pageKey="laporan"
-            open={sidebarOpen}
-            activePage={activePage}
-            setPage={setActivePage}
-          />
-          <NavItem
-            icon={<Settings size={20} />}
-            label="Pengaturan"
-            pageKey="pengaturan"
             open={sidebarOpen}
             activePage={activePage}
             setPage={setActivePage}
