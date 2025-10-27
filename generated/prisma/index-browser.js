@@ -131,6 +131,23 @@ exports.Prisma.ProductScalarFieldEnum = {
   lokasi: 'lokasi'
 };
 
+exports.Prisma.UserScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  username: 'username',
+  password: 'password',
+  role: 'role'
+};
+
+exports.Prisma.RatingScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  productId: 'productId',
+  rating: 'rating',
+  comment: 'comment'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -148,14 +165,32 @@ exports.Prisma.ProductOrderByRelevanceFieldEnum = {
   video: 'video',
   lokasi: 'lokasi'
 };
+
+exports.Prisma.UserOrderByRelevanceFieldEnum = {
+  name: 'name',
+  email: 'email',
+  username: 'username',
+  password: 'password'
+};
+
+exports.Prisma.RatingOrderByRelevanceFieldEnum = {
+  comment: 'comment'
+};
 exports.Category = exports.$Enums.Category = {
   KULINER: 'KULINER',
   SOUVENIR: 'SOUVENIR',
   FASHION: 'FASHION'
 };
 
+exports.Role = exports.$Enums.Role = {
+  admin: 'admin',
+  user: 'user'
+};
+
 exports.Prisma.ModelName = {
-  Product: 'Product'
+  Product: 'Product',
+  User: 'User',
+  Rating: 'Rating'
 };
 
 /**

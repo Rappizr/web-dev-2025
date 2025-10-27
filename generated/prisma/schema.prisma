@@ -20,6 +20,11 @@ enum Category {
   FASHION
 }
 
+enum Role {
+  admin
+  user
+}
+
 model Product {
   id          Int      @id @default(autoincrement())
   name        String
@@ -29,4 +34,21 @@ model Product {
   price       Int
   category    Category
   lokasi      String?
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  name     String
+  email    String
+  username String
+  password String
+  role     Role   @default(user)
+}
+
+model Rating {
+  id        Int    @id @default(autoincrement())
+  userId    Int
+  productId Int
+  rating    Int
+  comment   String
 }
